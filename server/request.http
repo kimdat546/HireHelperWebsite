@@ -1,0 +1,128 @@
+POST  http://localhost:5000/api/auth/employee/register
+Content-Type: application/json
+
+{
+    "username": "employee3",
+    "password": "employee3",
+    "name": "name",
+    "address": "address",
+    "phone": "phone",
+    "mail": "mail",
+    "type": "Personal",
+    "description": "description"
+}
+
+################################
+
+POST  http://localhost:5000/api/auth/employee/login
+Content-Type: application/json
+
+{
+    "username": "employee3",
+    "password": "employee3"
+}
+
+################################
+
+POST  http://localhost:5000/api/auth/employer/register
+Content-Type: application/json
+
+{
+    "username": "employer3",
+    "password": "employer3",
+    "name": "name",
+    "address": "address",
+    "phone": "phone",
+    "mail": "mail",
+    "type": "Personal",
+    "description": "description"
+}
+
+################################
+
+POST  http://localhost:5000/api/auth/employer/login
+Content-Type: application/json
+
+{
+    "username": "employer2",
+    "password": "employer2"
+}
+
+################################
+
+GET  http://localhost:5000/api/auth/employee/list
+
+
+################################
+
+GET  http://localhost:5000/api/auth/employee/60c49effea4d071c4c5bb69a
+
+################################
+
+GET  http://localhost:5000/api/auth/employer/list
+
+################################
+
+POST  http://localhost:5000/api/auth/employee/hire/60c49effea4d071c4c5bb69a
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGM0OWYyMGVhNGQwNzFjNGM1YmI2OWMiLCJpYXQiOjE2MjM0OTg4Mzh9.Fv-WJJpCfbFoaeyFTjUm9-Z5u_aDsULEp4ar2N1aOww
+Content-Type: application/json
+
+{
+    "idemployer": "60c49f18ea4d071c4c5bb69b",
+    "salary": "$9/hours",
+    "address": "Charing Cross Street",
+    "time": "2hours/1day",
+    "status": "Pending"
+}
+
+################################
+
+GET  http://localhost:5000/api/auth/employer/listwaiting/60c49ee3ea4d071c4c5bb698
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGM0OWYyMGVhNGQwNzFjNGM1YmI2OWMiLCJpYXQiOjE2MjM0OTg4Mzh9.Fv-WJJpCfbFoaeyFTjUm9-Z5u_aDsULEp4ar2N1aOww
+
+
+################################
+
+POST  http://localhost:5000/api/auth/employee/accept/60c49f18ea4d071c4c5bb69b
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGM0OWYyMGVhNGQwNzFjNGM1YmI2OWMiLCJpYXQiOjE2MjM0OTg4Mzh9.Fv-WJJpCfbFoaeyFTjUm9-Z5u_aDsULEp4ar2N1aOww
+Content-Type: application/json
+
+{
+    "idemployee": "60c49effea4d071c4c5bb69a",
+    "status": "Accept"
+}
+
+
+################################
+
+POST  http://localhost:5000/api/auth/employee/refuse/60c49f18ea4d071c4c5bb69b
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGM0OWYyMGVhNGQwNzFjNGM1YmI2OWMiLCJpYXQiOjE2MjM0OTg4Mzh9.Fv-WJJpCfbFoaeyFTjUm9-Z5u_aDsULEp4ar2N1aOww
+Content-Type: application/json
+
+{
+    "idemployee": "60c49effea4d071c4c5bb69a",
+    "status": "Refuse"
+}
+
+################################
+
+GET http://localhost:5000/api/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGMxYWZkODU0YzVhYzFlMjhlMWQxYjMiLCJpYXQiOjE2MjMzMDYyMTJ9.hunz8jjZnr4Ji0h9_JYH03pzXgU3MJDee_k4yeJvuxk
+
+################################
+
+PUT  http://localhost:5000/api/posts/60c1b08e54c5ac1e28e1d1b4
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGMxYWZkODU0YzVhYzFlMjhlMWQxYjMiLCJpYXQiOjE2MjMzMDYyMTJ9.hunz8jjZnr4Ji0h9_JYH03pzXgU3MJDee_k4yeJvuxk
+
+{
+    "title": "Tìm người giúp việc tại ngũ hành sơn",
+    "description": "Tìm người giúp việc tại đà nẵng",
+    "url": "/tim-nguoi-giup-viec/",
+    "status": "Pending"
+}
+
+################################
+
+DELETE http://localhost:5000/api/posts/60c1b08e54c5ac1e28e1d1b4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGMxYWZkODU0YzVhYzFlMjhlMWQxYjMiLCJpYXQiOjE2MjMzMDYyMTJ9.hunz8jjZnr4Ji0h9_JYH03pzXgU3MJDee_k4yeJvuxk
